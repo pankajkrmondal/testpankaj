@@ -3,20 +3,4 @@ os: linux
 files:
    - source: /
      destination: /var/www
-permissions:
-   - object: /var/www
-     pattern: "**"
-     owner: apache
-     group: apache
-     mode: 755
-     type:
-       - file
-hooks:
-   BeforeInstall:
-    - location: scripts/install_dependencies
-      runas: ubuntu
-    - location: scripts/start_server
-      runas: ubuntu
-   AfterInstall:
-    - location: scripts/stop_server
-      runas: ubuntu
+
